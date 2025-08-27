@@ -142,7 +142,7 @@ const Feed = () => {
   return (
     
     <>
-      <div className=' px-3 lg:px-6 w-full relative '>
+      <div className=' px-3 lg:flex lg:justify-center lg:flex-col w-full relative bg-red-500'>
         
         <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-2 lg:gap-5  lg:my-1 w-full rounded-lg">
           {feedEvents.map((event) => (

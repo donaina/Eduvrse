@@ -122,7 +122,7 @@ const DashBoard = () => {
 
                         </div>
                     </div>
-                    <div className=''>
+                    <div className='w-full h-auto flex justify-center items-center'>
                         <Outlet />
                     </div>
                     <div className=''>
