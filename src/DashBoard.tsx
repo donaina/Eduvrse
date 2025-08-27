@@ -29,24 +29,35 @@ const DashBoard = () => {
     const [openMenu, setOpenMenu] = useState(false)
     const dropdownRef = useRef(null);
 
-    useEffect(() => {
-        const handleClickOutside = (e: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-                setOpenNotification(false);
-            }
-            if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-                setOpenMenu(false);
-            }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
+    const notificationRef = useRef(null);
+  const menuRef = useRef(null);
 
+    useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as Node;
+
+      // Close notification if clicked outside
+      if (
+        notificationRef.current &&
+        !notificationRef.current.contains(target)
+      ) {
+        setOpenNotification(false);
+      }
+
+      // Close menu if clicked outside
+      if (menuRef.current && !menuRef.current.contains(target)) {
+        setOpenMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
     return (
         <>
             <div className=' flex h-screen'>
                 {/* menu section */}
-                <div className={`bg-[#0843F7] p-2 h-screen w-full text-white transition-all duration-300 lg:relative ${openMenu ? "w-[50%] flex absolute z-50" : "w-0 hidden"} lg:w-[18%] lg:flex lg:flex-col `} >
+                <div ref={menuRef} className={`bg-[#0843F7]  p-2 h-screen w-full text-white transition-all duration-300 lg:relative ${openMenu ? "w-[50%] flex absolute z-50" : "w-0 hidden"} lg:w-[18%] lg:flex lg:flex-col `} >
                     <div className=' w-full h-full '>
                         <h1 className={`px-2 my-14 lg:text-3xl text-2xl  font-bold transition-opacity  ${location.pathname === '/feed' ? 'block ' : 'hidden'}`}>EduverseLabs</h1>
                         <ul className=" gap-2  my-6 w-full font-normal mt-4">
