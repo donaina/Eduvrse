@@ -86,7 +86,7 @@ const DashBoard = () => {
                     </div>
                 </div>
 
-                <div className="w-full lg:w-10/12 h-screen overflow-auto animate-bounce-right">
+                <div className="w-full lg:w-10/12 h-screen overflow-auto animate-bounce-right bg-red-500">
                     {/* header section */}
                     <div className=" px-2 lg:px-7 mb-2 lg:my-4 border-b-[1px] border-gray-300 flex  lg:justify-between items-center lg:h-16 bg-blue-700 text-white lg:bg-white lg:text-black ">
 
@@ -122,7 +122,7 @@ const DashBoard = () => {
 
                         </div>
                     </div>
-                    <div className='w-full h-auto flex justify-center items-center'>
+                    <div className='w-full  flex justify-center items-center'>
                         <Outlet />
                     </div>
                     <div className=''>

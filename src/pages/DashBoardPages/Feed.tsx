@@ -140,11 +140,11 @@ const Feed = () => {
 
 
   return (
-    
+
     <>
-      <div className=' px-3 lg:flex lg:justify-center lg:flex-col w-full relative bg-red-500'>
-        
-        <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-2 lg:gap-5  lg:my-1 w-full rounded-lg">
+      <div className=' w-full px-3 lg:flex lg:justify-center lg:flex-col  relative '>
+
+        <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-2 lg:gap-5  lg:my-1 w-full rounded-lg ">
           {feedEvents.map((event) => (
             <div
               key={event.id}
@@ -177,7 +177,7 @@ const Feed = () => {
                   <div className={`w-[6px] lg:w-1 h-full rounded-l-xl ${update.color} `}>
 
                   </div>
-                  
+
                   <div className='flex  justify-between items-center  w-full py-1 px-2 lg:px-2'>
                     <div className='  h-full w-full '>
                       <div className=' flex flex-col justify-between '>
