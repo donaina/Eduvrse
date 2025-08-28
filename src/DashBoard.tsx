@@ -55,7 +55,7 @@ const DashBoard = () => {
   }, []);
     return (
         <>
-            <div className=' flex h-screen'>
+            <div className=' w-full flex  h-screen'>
                 {/* menu section */}
                 <div ref={menuRef} className={`bg-[#0843F7]  p-2 h-screen w-full text-white transition-all duration-300 lg:relative ${openMenu ? "w-[50%] flex absolute z-50" : "w-0 hidden"} lg:w-[18%] lg:flex lg:flex-col `} >
                     <div className=' w-full h-full '>
@@ -86,15 +86,15 @@ const DashBoard = () => {
                     </div>
                 </div>
 
-                <div className="w-full lg:w-10/12 h-screen overflow-auto animate-bounce-right bg-red-500">
+                <div className="w-full  lg:w-[90%] h-screen overflow-auto animate-bounce-right ">
                     {/* header section */}
-                    <div className=" px-2 lg:px-7 mb-2 lg:my-4 border-b-[1px] border-gray-300 flex  lg:justify-between items-center lg:h-16 bg-blue-700 text-white lg:bg-white lg:text-black ">
+                    <div className=" px-2 py-3 lg:px-4 mb-2 lg:my-4 border-b-[1px] border-gray-300 flex  lg:justify-between items-center lg:h-16 bg-blue-700 text-white lg:bg-white lg:text-black ">
 
-                        <div className='my-2 w-full flex  h-full items-center '>
+                        <div className=' w-full flex justify h-full items-center '>
                             <div className='lg:hidden p-2 font-bold text-white' onClick={() => setOpenMenu(!openMenu)}>
                                 <IoMenuOutline size={30} />
                             </div>
-                            <div className='flex flex-col lg:flex-row lg:items-center w-full lg:w-auto  '>
+                            <div className='flex flex-col  lg:flex-row lg:items-center w-full lg:w-auto  '>
                                 <h1 className='lg:hidden text-xl font-bold'>EduVerse</h1>
                                 {location.pathname === '/feed' ?
                                     (<div className='w-full'>
@@ -122,7 +122,7 @@ const DashBoard = () => {
 
                         </div>
                     </div>
-                    <div className='w-full  flex justify-center items-center'>
+                    <div className='w-full '>
                         <Outlet />
                     </div>
                     <div className=''>
