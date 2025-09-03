@@ -207,7 +207,7 @@ const Feed = () => {
               </div>
               <div className='lg:border-[1.5px] lg:border-gray-200 mt-2 lg:h-[535px] bg-white py-2 px-1 rounded-lg lg:shadow-lg '>
 
-                <div className="flex gap-2 p-1 w-full  overflow-x-auto overflow-y-hidden  whitespace-nowrap">
+                <div className="flex gap-2 p-1 w-full  overflow-x-auto overflow-y-hidden  whitespace-nowrap snap-center">
                   {activitiesAndBadges.map((activity) => (
                     <div
                       key={activity.id}

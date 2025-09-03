@@ -99,7 +99,7 @@ const DashBoard = () => {
                                 {location.pathname === '/feed' ?
                                     (<div className='w-full'>
                                         <h1 className='font-bold text-md capitalize lg:hidden flex'>Welcome Back Rolake</h1>
-                                        <h1 className='font-bold text-2xl capitalize hidden lg:flex '>Welcome back, <span className='text-blue-600'>Rolake</span> !</h1>
+                                        <h1 className='font-bold text-2xl capitalize hidden lg:flex '>Welcome back, <span> <span> </span></span> <span className='text-blue-600'> Rolake</span> !</h1>
                                         <h5 className='text-[11px]'>Here is what is happening with your studies today.</h5>
                                     </div>
                                     ) : (

@@ -53,10 +53,10 @@ const Register = () => {
                         <img src={studentImg} alt="student" />
                         <label className="ml-1  text-sm sm:text-sm md:text-base">Student</label>
                       </div>
-                      <div className="flex flex-col items-center mt-2 ">
+                      {/* <div className="flex flex-col items-center mt-2 ">
                         <img src={gardians} alt="gardian" />
                         <label className="ml-1  text-sm sm:text-sm md:text-base">Gardian</label>
-                      </div>
+                      </div> */}
                       <div className="flex flex-col items-center mt-2">
                         <img src={instructor} alt="instructor" />
                         <label className="ml-1 text-sm sm:text-sm md:text-base">Instructor</label>

@@ -4,10 +4,13 @@ import { IoIosSearch } from "react-icons/io";
 import mycourse from '../../Assets/images/mycourse.jpg'
 import { FiDownload } from "react-icons/fi";
 import { CiPlay1 } from "react-icons/ci";
-
+import { useNavigate, Outlet , useLocation} from "react-router-dom";
 
 
 const MyCourse = () => {
+  const navigate = useNavigate();
+  const locate = useLocation()
+
 
   const mycourseData = [
     {
@@ -54,6 +57,7 @@ const MyCourse = () => {
 
   return (
     <>
+      {locate.pathname === '/my-course' ?
       <div className='h-full w-full px-3 lg:px-6'>
         <div className='flex items-center my-6'>
           <div className='w-full lg:w-auto mr-24'>
@@ -64,21 +68,21 @@ const MyCourse = () => {
             <input type="text" className='w-[90%] outline-none h-full bg-[#F7F6F6] px-4' placeholder='search' />
             <button className='p-2 bg-red'><IoIosSearch size={25} /></button>
           </div>
-            <button className='p-2 lg:hidden'><IoIosSearch size={30} /></button>
+          <button className='p-2 lg:hidden'><IoIosSearch size={30} /></button>
 
         </div>
         <div className='w-full'>
           {
             mycourseData.map(item => (
               <div key={item.id} className='w-full h-full flex flex-col lg:flex-row justify-between items-center lg:items-start my-6 gap-4'>
-                <div className='w-full lg:w-[75%] h-40 lg:h-72 p-2 outline outline-[#F7F6F6] bg-[#F7F6F6] rounded flex  gap-3'>
-                  <div className="w-3/4 h-full relative">
+                <div className='w-full lg:w-[80%] h-44 lg:h-80 p-2 outline outline-[#F7F6F6] bg-[#F7F6F6] rounded flex  gap-3'>
+                  <div className="w-3/4 h-full relative rounded-lg">
                     <img
                       src={item.img}
                       alt="my course"
-                      className="w-full h-full rounded opacity-[4]"
+                      className="w-full h-full rounded-lg opacity-[4] "
                     />
-                    <span className="absolute inset-0 flex items-center justify-center text-4xl text-white">
+                    <span className="absolute inset-0 flex items-center justify-center text-4xl text-white bg-black/40">
                       <button className='bg-gray-400 rounded-3xl p-2 text-black'><CiPlay1 size={30} /></button>
                     </span>
                   </div>
@@ -107,7 +111,7 @@ const MyCourse = () => {
                       <p>12 weeks</p>
                     </div>
                     <div className='w-full h-[25px] lg:h-12 my-2 text-white flex justify-between items-center'>
-                      <button className='bg-black w-5/6 h-full rounded'>Continue</button>
+                      <button className='bg-black w-5/6 h-full rounded' onClick={() => navigate(`/my-course/${item.id}`)}>Continue</button>
                       <button className='bg-black w-[13%] h-full flex justify-center items-center rounded'><FiDownload /></button>
                     </div>
 
@@ -117,7 +121,13 @@ const MyCourse = () => {
             ))
           }
         </div>
-      </div>
+        
+      </div>:
+      <div className="w-full px-4 -pt-2">
+          <Outlet />
+        </div>
+      }
+      
     </>
   )
 }

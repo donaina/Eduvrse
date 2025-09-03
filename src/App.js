@@ -6,13 +6,14 @@ import Login from './pages/Authentication/Login.tsx'
 import Register from './pages/Authentication/Register.tsx'
 import Mycourse from './pages/DashBoardPages/MyCourse.tsx';
 import Assessment from './pages/DashBoardPages/Assessment.tsx';
-import Attendance from './pages/DashBoardPages/Attendance.tsx'; 
+import Attendance from './pages/DashBoardPages/Attendance.tsx';
 import Certification from './pages/DashBoardPages/Certification.tsx';
-import Message from './pages/DashBoardPages/Message.tsx'; 
+import Message from './pages/DashBoardPages/Message.tsx';
 import Course from './pages/DashBoardPages/Course.tsx';
 import Settings from './pages/DashBoardPages/Settings.tsx';
 import Tools from './pages/DashBoardPages/Tools.tsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ViewCourse from './pages/DashBoardPages/ViewCourse.tsx';
 
 function App() {
   return (
@@ -22,10 +23,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path='view-course' element={<ViewCourse />} />
             {/* Add other routes here */}
             <Route path="/" element={<DashBoard />}>
               <Route path="feed" index element={<Feed />} />
-              <Route path="my-course" element={<Mycourse />} />
+              <Route path="my-course" element={<Mycourse />} >
+                <Route path=':courseId' element={<ViewCourse />} />
+              </Route>
               <Route path="assessment" element={<Assessment />} />
               <Route path="attendance" element={<Attendance />} />
               <Route path="certification" element={<Certification />} />
