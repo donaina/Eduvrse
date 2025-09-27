@@ -1,6 +1,6 @@
 import { AiFillBell } from 'react-icons/ai';
 import { BsDot } from 'react-icons/bs';
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, Link, useLocation, NavLink } from 'react-router-dom';
 import { IoMenuOutline } from 'react-icons/io5';
 import React, { useState, useRef, useEffect } from 'react';
 import Notification from './pages/DashBoardPages/Notification.tsx';
@@ -29,35 +29,24 @@ const DashBoard = () => {
     const [openMenu, setOpenMenu] = useState(false)
     const dropdownRef = useRef(null);
 
-    const notificationRef = useRef(null);
-  const menuRef = useRef(null);
+    // useEffect(() => {
+    //     const handleClickOutside = (e: MouseEvent) => {
+    //         if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+    //             setOpenNotification(false);
+    //         }
+    //         if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+    //             setOpenMenu(false);
+    //         }
+    //     };
+    //     document.addEventListener("mousedown", handleClickOutside);
+    //     return () => document.removeEventListener("mousedown", handleClickOutside);
+    // }, []);
 
-    useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      const target = e.target as Node;
-
-      // Close notification if clicked outside
-      if (
-        notificationRef.current &&
-        !notificationRef.current.contains(target)
-      ) {
-        setOpenNotification(false);
-      }
-
-      // Close menu if clicked outside
-      if (menuRef.current && !menuRef.current.contains(target)) {
-        setOpenMenu(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
     return (
         <>
-            <div className=' w-full flex  h-screen'>
+            <div className=' flex h-screen'>
                 {/* menu section */}
-                <div ref={menuRef} className={`bg-[#0843F7]  p-2 h-screen w-full text-white transition-all duration-300 lg:relative ${openMenu ? "w-[50%] flex absolute z-50" : "w-0 hidden"} lg:w-[18%] lg:flex lg:flex-col `} >
+                <div className={`bg-[#FFFFFF] p-2 h-screen w-full text-white transition-all duration-300 lg:relative ${openMenu ? "w-[50%] flex absolute z-50" : "w-0 hidden"} lg:w-[18%] lg:flex lg:flex-col `} >
                     <div className=' w-full h-full '>
                         <h1 className={`px-2 my-14 lg:text-3xl text-2xl  font-bold transition-opacity  ${location.pathname === '/feed' ? 'block ' : 'hidden'}`}>EduverseLabs</h1>
                         <ul className=" gap-2  my-6 w-full font-normal mt-4">
@@ -65,18 +54,24 @@ const DashBoard = () => {
                             <div className='h-3/4 w-full '>
                                 {sideMenuData.map((item, index) => (
 
-                                    <Link to={item.path} className=" ">
-                                        <li key={index} className={` p-2 mt-1 hover:bg-white hover:text-black cursor-pointer w-full rounded-md transition-colors  ${location.pathname === item.path
-                                            ? "bg-white text-black" // Active page
-                                            : "text-white hover:bg-white hover:text-black" // Inactive pages
-                                            }`} >
-                                            <span className="text-lg">{item.name}</span>
-                                        </li>
-                                    </Link>
+                                    <li key={index} className="p-2 mt-1 w-full rounded-md">
+                                        <NavLink
+                                            to={item.path}
+                                            end={false} // <-- this keeps it active for nested routes
+                                            className={({ isActive }) =>
+                                                `block w-full rounded-md p-2 transition-colors text-lg ${isActive
+                                                    ? "bg-blue-700 text-white hover:bg-gray-600/25 hover:text-white"
+                                                    : "text-black hover:bg-gray-600/25 hover:text-white"
+                                                }`
+                                            }
+                                        >
+                                            {item.name}
+                                        </NavLink>
+                                    </li>
 
                                 ))}
                                 <Link to="/" className=" ">
-                                    <li className=' bottom-16 p-2 flex  gap-2 hover:bg-white hover:text-black rounded-md  w-[16.7%] fixed '><span ><IoLogOut size={25} />
+                                    <li className=' bottom-16 p-2 flex  gap-2 text-black hover:bg-blue-700 hover:text-bwhite rounded-md  w-[16.7%] fixed '><span ><IoLogOut size={25} />
 
                                     </span><span>LogOut</span></li></Link>
                             </div>
@@ -86,20 +81,20 @@ const DashBoard = () => {
                     </div>
                 </div>
 
-                <div className="w-full  lg:w-[90%] h-screen overflow-auto animate-bounce-right ">
+                <div className="w-full lg:w-10/12 h-screen overflow-auto animate-bounce-right">
                     {/* header section */}
-                    <div className=" px-2 py-3 lg:px-4 mb-2 lg:my-4 border-b-[1px] border-gray-300 flex  lg:justify-between items-center lg:h-16 bg-blue-700 text-white lg:bg-white lg:text-black ">
+                    <div className=" px-2 lg:px-7 mb-2 lg:my-4 border-b-[1px] border-gray-300 flex  lg:justify-between items-center lg:h-16 bg-blue-700 text-white lg:bg-white lg:text-black ">
 
-                        <div className=' w-full flex justify h-full items-center '>
+                        <div className='my-2 w-full flex  h-full items-center '>
                             <div className='lg:hidden p-2 font-bold text-white' onClick={() => setOpenMenu(!openMenu)}>
                                 <IoMenuOutline size={30} />
                             </div>
-                            <div className='flex flex-col  lg:flex-row lg:items-center w-full lg:w-auto  '>
+                            <div className='flex flex-col lg:flex-row lg:items-center w-full lg:w-auto  '>
                                 <h1 className='lg:hidden text-xl font-bold'>EduVerse</h1>
                                 {location.pathname === '/feed' ?
                                     (<div className='w-full'>
                                         <h1 className='font-bold text-md capitalize lg:hidden flex'>Welcome Back Rolake</h1>
-                                        <h1 className='font-bold text-2xl capitalize hidden lg:flex '>Welcome back, <span> <span> </span></span> <span className='text-blue-600'> Rolake</span> !</h1>
+                                        <h1 className='font-bold text-2xl capitalize hidden lg:flex '>Welcome back, <span className='text-blue-600'>Rolake</span> !</h1>
                                         <h5 className='text-[11px]'>Here is what is happening with your studies today.</h5>
                                     </div>
                                     ) : (
@@ -122,7 +117,7 @@ const DashBoard = () => {
 
                         </div>
                     </div>
-                    <div className='w-full '>
+                    <div className=''>
                         <Outlet />
                     </div>
                     <div className=''>
