@@ -80,50 +80,34 @@ const Assessment = () => {
     assessment.course.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // const getProgressColor = (progress: number) => {
-  //   if (progress >= 80) return 'bg-green-400';
-  //   if (progress >= 60) return 'bg-yellow-400';
-  //   if (progress >= 40) return 'bg-blue-400';
-  //   return 'bg-red-400';
-  // };
-
-  // const getDifficultyColor = (difficulty: string) => {
-  //   switch (difficulty) {
-  //     case 'Easy': return 'bg-green-100 text-green-700';
-  //     case 'Medium': return 'bg-yellow-100 text-yellow-700';
-  //     case 'Hard': return 'bg-red-100 text-red-700';
-  //     default: return 'bg-gray-100 text-gray-700';
-  //   }
-  // };
-
   return (
     <div className='flex h-screen bg-gray-50'>
 
 
       {/* Main Content */}
-      <div className='flex-1 w-full'>
+      <div className=' w-full'>
         {/* Header */}
-        <div className='bg-white border-b border-gray-200 w-full  py-6 '>
-          <div className='flex items-center gap-12 w-full px-8 '>
-            
-            <div className='w-full lg:w-auto mr-24'>
-              <h1 className='font-medium text-2xl lg:text-lg '>My <span className='text-[#0843F7]'>Courses</span> !</h1>
+        <div className='bg-white border-b border-gray-200 w-full '>
+          <div className='flex items-center gap-12 w-full py-3 '>
+
+            <div className='w-full lg:w-auto '>
+              <h1 className='font-medium text-2xl lg:text-lg '>My <span className='text-[#0843F7]'>Assessment</span> !</h1>
               <h3 className='text-xs hidden lg:block'>continue your learning journey</h3>
             </div>
 
             {/* Search Bar */}
             <div className='w-[52%] bg-[#F7F6F6] rounded  lg:flex justify-between items-center px-2 outline outline-[#F7F6F6] shadow-[-4px_0_6px_rgba(0,0,0,0.2) shadow-[0_-4px_6px_rgba(0,0,0,0.2)] hidden'>
-                          <input type="text" className='w-[90%] outline-none h-full bg-[#F7F6F6] px-4' placeholder='search' value={searchTerm}
+              <input type="text" className='w-[90%] outline-none h-full bg-[#F7F6F6] px-4' placeholder='search' value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)} />
-                          <button className='p-2 bg-red'><IoIosSearch size={25} /></button>
-                        </div>
-                        <button className='p-2 lg:hidden'><IoIosSearch size={30} /></button>
-            
+              <button className='p-2 bg-red'><IoIosSearch size={25} /></button>
+            </div>
+            <button className='p-2 lg:hidden'><IoIosSearch size={30} /></button>
+
           </div>
         </div>
 
         {/* Assessment Cards */}
-        <div className='p-8 w-full flex justify-center items-center'>
+        <div className='w-full flex justify-center items-center'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {filteredAssessments.length === 0 ? (
               <div className='col-span-full text-center py-12'>
@@ -192,7 +176,7 @@ const Assessment = () => {
                   {/* Action Button */}
                   <Link to='/assessmentQuestion' className='w-full'>
                     <button className='w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors'>
-                      {assessment.status === 'Ready to Submit' ? 'Submit' : 'Continue'}   
+                      {assessment.status === 'Ready to Submit' ? 'Submit' : 'Continue'}
                     </button>
                   </Link>
                 </div>

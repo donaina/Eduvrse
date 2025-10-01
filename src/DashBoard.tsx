@@ -4,6 +4,8 @@ import { Outlet, Link, useLocation, NavLink } from 'react-router-dom';
 import { IoMenuOutline } from 'react-icons/io5';
 import React, { useState, useRef, useEffect } from 'react';
 import Notification from './pages/DashBoardPages/Notification.tsx';
+// @ts-ignore
+import eduverseLabsLogo from '../src/Assets/images/eduverseLogo2.png';
 // import { HiOutlineLogout } from "react-icons/hi";
 import { IoLogOut } from "react-icons/io5";
 
@@ -48,8 +50,10 @@ const DashBoard = () => {
                 {/* menu section */}
                 <div className={`bg-[#FFFFFF] p-2 h-screen w-full text-white transition-all duration-300 lg:relative ${openMenu ? "w-[50%] flex absolute z-50" : "w-0 hidden"} lg:w-[18%] lg:flex lg:flex-col `} >
                     <div className=' w-full h-full '>
-                        <h1 className={`px-2 my-14 lg:text-3xl text-2xl  font-bold transition-opacity  ${location.pathname === '/feed' ? 'block ' : 'hidden'}`}>EduverseLabs</h1>
-                        <ul className=" gap-2  my-6 w-full font-normal mt-4">
+                        {/* <div className={`px-2  font-bold transition-opacity  `}> */}
+                            <img src={eduverseLabsLogo} alt="eduverse logo" className='w-full pt-2' />
+                        {/* </div> */}
+                        <ul className=" gap-2 w-full font-normal">
 
                             <div className='h-3/4 w-full '>
                                 {sideMenuData.map((item, index) => (
@@ -98,7 +102,7 @@ const DashBoard = () => {
                                         <h5 className='text-[11px]'>Here is what is happening with your studies today.</h5>
                                     </div>
                                     ) : (
-                                        <h1 className='font-bold text-2xl capitalize hidden lg:flex gap-2'>Eduverse <span className='text-blue-600'>Labs</span></h1>
+                                        <h1 className='font-bold text-2xl capitalize hidden lg:flex gap-2'>Eduverse </h1>
                                     )}
                             </div>
                         </div>

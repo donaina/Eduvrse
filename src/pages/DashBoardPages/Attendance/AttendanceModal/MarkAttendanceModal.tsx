@@ -155,7 +155,7 @@ const MarkAttendanceModal: React.FC<MarkAttendanceModalProps> = ({ open, close, 
       </Modal>
 
       {/* Nested Modals */}
-      <Present open={openPresent} close={() => setOpenPresent(false)}  />
+      <Present open={openPresent} close={() => setOpenPresent(false)} item = {itemData} />
       <Absent open={openAbsent} close={() => setOpenAbsent(false)} />
       {/* <Excused open={openExcused} close={() => setOpenExcused(false)} /> */}
     </>
