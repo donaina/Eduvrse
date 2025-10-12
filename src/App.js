@@ -28,7 +28,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path='view-course' element={<ViewCourse />} />
             {/* Add other routes here */}
             <Route path="/" element={<DashBoard />}>
               <Route path="feed" index element={<Feed />} />
