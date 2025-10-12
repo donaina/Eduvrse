@@ -14,9 +14,9 @@ import gardians from '../../Assets/images/family.jpeg'
 import instructor from '../../Assets/images/instructor.jpeg'
 // @ts-ignore
 import admin from '../../Assets/images/admin.jpeg'
-
 const Register = () => {
   // Using UserMultiStepForm to manage steps
+  
   const {  step, isFirstStep, isLastStep, back, next } = UserMultiStepForm([<UserForm />, <AddressFrom />, <Department />, <LearningGoals />])
   return (
     <>
@@ -67,7 +67,6 @@ const Register = () => {
                       </div>
                     </div>
                     <form className="">
-
                       {step}
                       <div className="flex justify-end ">
                         <p className="text-sm text-blue-500 right-0 relative">Forget Password</p>
@@ -82,26 +81,18 @@ const Register = () => {
                         {!isFirstStep && <button type="button" onClick={back} className="flex justify-between items-center"><IoIosArrowBack /> back</button>}
                         {/* <button type="button" ></button> */}
                       </div>
-
-
                     </form>
                   </div>
                 </div>
               </div>
-
             </div>
-
-
           </div>
-
         </div>
         {/* <div className="h-1/2 bg-white">
     
             </div> */}
-
       </div>
     </>
   )
 }
-
 export default Register

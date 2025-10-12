@@ -14,7 +14,7 @@ const Attendance = () => {
   } | null>(null);
 
   const upComingEvents = [
-    { date: '2024-07-10', event: 'Math Exam', duration: '1h:20min', time: '8am - 10am', room: 'Room 101' },
+    { date: '2024-07-10', event: 'Math Exam', duration: '1h:20min:00', time: '8am - 10am', room: 'Room 101' },
     { date: '2024-07-15', event: 'Science Project Due', time: '8am - 10am', room: 'Room 101' },
     { date: '2024-07-20', event: 'History Presentation', time: '8am - 10am', room: 'Room 101' },
   ];
@@ -70,17 +70,17 @@ const Attendance = () => {
                     <div className='w-full '>
                       <div className=" ">
                         <div className="flex  justify-between items-center py-1 px-3">
-                          <div>
+                          <div className='text-sm'>
                             <h2 className="text-xl font-semibold">{item.event}</h2>
                             <p className="text-sm text-gray-600">{item.date}</p>
                             <p>Room: {item.room}</p>
                           </div>
-                          <div className="text-sm text-gray-600">
-                            <p className='my-2'>{item.duration ? ` ${item.duration}` : null}</p>
+                          <div className="text-sm text-gray-600  right-1">
+                            <p className='my-2 bg-blue-600 w-24 rounded-md text-white text-center'>{item.duration ? ` ${item.duration}` : null}</p>
                             {/* <p className="text-sm text-gray-600">{item.date}</p> */}
 
-                            <p>{item.time}</p>
-                            
+                            <p className='text-end'>{item.time}</p>
+
                           </div>
                         </div>
                       </div>
@@ -113,7 +113,7 @@ const Attendance = () => {
                     <div className='w-full '>
                       <div className=" ">
                         <div className="flex  justify-between items-center py-1 px-3">
-                          <div>
+                          <div className='text-sm'>
                             <h2 className="text-xl font-semibold">{item.event}</h2>
                             <p className="text-sm text-gray-600">{item.date}</p>
                             <p>Room: {item.room}</p>
@@ -123,7 +123,7 @@ const Attendance = () => {
                             {/* <p className="text-sm text-gray-600">{item.date}</p> */}
 
                             <p>{item.time}</p>
-                            
+
                           </div>
                         </div>
                       </div>
@@ -155,7 +155,8 @@ const Attendance = () => {
       </div>
 
       <MarkAttendanceModal open={openAttendanceModal} close={() => setOpenAttendanceModal(false)} item={openItemModal ? [openItemModal] : []} />
-        
+      
+
     </>
   )
 }

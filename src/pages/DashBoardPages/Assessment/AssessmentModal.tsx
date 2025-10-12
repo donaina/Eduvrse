@@ -31,7 +31,7 @@ const AssessmentModal = ({ open, onClose }: { open: boolean; onClose: () => void
                     </button>
                     <button
                         className="bg-black text-white px-4 py-2 w-40 rounded hover:bg-blue-700 transition"
-                        navigate to='/feed'
+                        onClick={() => navigate('/feed')}
                     >
                         Feed
                     </button>

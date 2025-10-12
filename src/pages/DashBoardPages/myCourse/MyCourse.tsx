@@ -71,7 +71,7 @@ const MyCourse = () => {
             <button className='p-2 lg:hidden'><IoIosSearch size={30} /></button>
 
           </div>
-          <div className='w-full bg-[#ADADAD]/40 flex gap-5'>
+          <div className='w-full bg-gray-50 flex gap-5'>
             <div className='w-full '>
 
               {
@@ -141,7 +141,7 @@ const MyCourse = () => {
                     <p className='bg-white w-[100%] h-1 rounded-lg'><p className='bg-green-400 w-[50%] h-1 rounded-lg'></p></p>
 
                   </div>
-                  
+
                 </div>
                 <div className='w-full h-[25%] bg-[#2096F3] p-2 my-4 flex justify-center items-center rounded-lg'>
                   <div className='w-[30%] h-[90%] rounded-full border-white border-4 flex justify-center items-center' >
@@ -152,7 +152,7 @@ const MyCourse = () => {
                     <p className='bg-white w-[100%] h-1 rounded-lg'><p className='bg-green-400 w-[50%] h-1 rounded-lg'></p></p>
 
                   </div>
-                  
+
                 </div>
                 <div className='w-full h-[25%] bg-[#2096F3] p-2 my-4 flex justify-center items-center rounded-lg'>
                   <div className='w-[30%] h-[90%] rounded-full border-white border-4 flex justify-center items-center' >
@@ -163,7 +163,7 @@ const MyCourse = () => {
                     <p className='bg-white w-[100%] h-1 rounded-lg'><p className='bg-green-400 w-[50%] h-1 rounded-lg'></p></p>
 
                   </div>
-                  
+
                 </div>
               </div>
             </div>
