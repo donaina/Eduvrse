@@ -17,6 +17,9 @@ import pending from '../../Assets/images/pending.png';
 import success from '../../Assets/images/success.png'
 // @ts-ignore
 import schedule from '../../Assets/images/schedule.png';
+
+// @ts-ignore
+import style from '../../Assets/images/style.png'
 // import { AiFillBell } from 'react-icons/ai';
 // import { BsDot } from 'react-icons/bs';
 import { FaPlus } from "react-icons/fa";
@@ -144,26 +147,20 @@ const Feed = () => {
     <>
 
       <div className='w-full  lg:flex lg:justify-center lg:flex-col'>
-        <div className='  mx-4 '>
+        <div className='  mx-4 my-2 '>
 
-          <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-2 lg:gap-5  lg:my-1 w-full rounded-lg ">
-            {feedEvents.map((event) => (
-              <div
-                key={event.id}
-                className="bg-[#F7F6F6] w-full lg:w-[23%] p-2 lg:justify-between mt-1 rounded-lg  border border-gray-300 shadow-md lg:mt-2 flex items-center lg:flex-row  lg:items-start md:gap-2"
-              >
-                <div className=" grid grid-cols-1 order-2 lg:order-1 px-2">
-                  <h2 className="text-[10px] md:text-[10px] lg:text-xs font-bold">{event.title}</h2>
-                  <p className="order-2 lg:order-1 text-xl lg:text-2xl font-bold">{event.number}</p>
-                  <p className="order-1 lg:order-2  text-xs text-gray-500 ">{event.date}</p>
-                </div>
-                <img src={event.icon} alt="event.title" className='w-10 h-10 md:w-14 md:h-14 opacity-55 order-1 lg:order-2' />
-              </div>
-            ))}
-          </div>
+
 
           <div className='flex flex-col lg:justify-between lg:flex-row mt-3 gap-4 lg:gap-2'>
             <div className='w-full lg:w-[48%] '>
+              <div className="grid grid-cols-2 justify-center items-center  h-52 lg:flex-wrap gap-2 lg:gap-2  lg:my-1 w-full rounded-lg ">
+                <div>
+                  <h2 className="text-black text-lg lg:text-2xl font-bold">Welcome back, Rolake!</h2>
+                </div>
+                <div>
+                  <img src={style} alt="" />
+                </div>
+              </div>
               <div className='flex justify-between items-center mb-2'>
                 <div>
                   <h1 className='font-semibold text-[15px] lg:text-xl'>Recent Updates</h1>
@@ -201,6 +198,21 @@ const Feed = () => {
               </div>
             </div>
             <div className='w-full lg:w-[50%]'>
+              <div className="grid grid-cols-2 h-50  lg:flex-wrap gap-2 lg:gap-5  lg:my-1 w-full rounded-lg ">
+                {feedEvents.map((event) => (
+                  <div
+                    key={event.id}
+                    className="bg-[#F7F6F6] w-full lg:w-full p-2 lg:justify-between mt-1 rounded-lg  border border-gray-300 shadow-md lg:mt-2 flex items-center lg:flex-row  lg:items-start md:gap-2"
+                  >
+                    <div className=" grid grid-cols-1  order-2 lg:order-1 px-2">
+                      <h2 className="text-[10px] md:text-[10px] lg:text-xs font-bold">{event.title}</h2>
+                      <p className="order-2 lg:order-1 text-xl lg:text-2xl font-bold">{event.number}</p>
+                      <p className="order-1 lg:order-2  text-xs text-gray-500 ">{event.date}</p>
+                    </div>
+                    <img src={event.icon} alt="event.title" className='w-10 h-10 md:w-14 md:h-14 opacity-55 order-1 lg:order-2' />
+                  </div>
+                ))}
+              </div>
               <div>
                 <h1 className='font-bold text-[15px] text-xl'>Activities & Badges</h1>
                 <h5 className='text-[8px] lg:text-[10px] mt-1 mb-3 '>Catch up on activities and earn badges</h5>

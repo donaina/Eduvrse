@@ -1,14 +1,18 @@
 import React from 'react'
 // @ts-ignore
-import DaysFire from '../../../Assets/images/dayfire.jpeg'
+import DaysFire from '../../../Assets/images/dayfire.png'
 // @ts-ignore
-import Course from '../../../Assets/images/course.jpeg'
+import Course from '../../../Assets/images/course.png'
 // @ts-ignore
-import Badge from '../../../Assets/images/badges.jpeg'
+import Badge from '../../../Assets/images/badges.png'
 // @ts-ignore
-import Assessment from '../../../Assets/images/assessment.jpeg'
+import Assessment from '../../../Assets/images/assessment.png'
 // @ts-ignore
 import BadgesImage from '../../../Assets/images/badgesImage.png'
+//@ts-ignore
+import vector from '../../../Assets/images/vector.png'
+// @ts-ignore
+import bronzeCup from '../../../Assets/images/bronze_cup.jpeg'
 import { Link } from 'react-router-dom'
 
 
@@ -137,7 +141,7 @@ const Certification = () => {
             <h1 className='my-2 font-bold text-2xl'>Statistics</h1>
             <div className='grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-2 '>
               {statisticData.map(item => (
-                <div key={item.id} className='flex gap-4 p-4 rounded-lg shadow-md bg-[#0C7FDA] text-white'>
+                <div key={item.id} className='flex gap-4 p-4 rounded-lg shadow-md bg-[#EFF3FF] text-black'>
                   <div className='w-12 h-12 lg:w-16 lg:h-16'>
                     <img src={item.img} alt={item.title} className='w-full h-full object-cover rounded-lg' />
                   </div>
@@ -180,9 +184,11 @@ const Certification = () => {
                 <div className='flex gap-4'>
                   {DownloadCertification.map(item => (
                     <div className='w-64 h-80  rounded-md hover:bg-gray-400/25 ' key={item.id}>
-                      <div className=' w-full h-40 bg-white rounded-t-md bg-gradient-to-t from-[#BEA1FF] to-[#0089ED] p-4'>
+                      <div className=' w-full h-40 bg-white rounded-t-md bg-gradient-to-t from-[#BEA1FF] to-[#EFF3FF] p-4'>
                         <div className='flex justify-between items-center'>
-                          <p>v</p>
+                          <div >
+                            <img src={vector} alt="vector" className='w-10 h-10' />
+                          </div>
                           <button className=' border border-[#EDFF24] rounded-full p-1 bg-green-300 text-sm'>Grade: <strong>{item.grade}</strong></button>
                         </div>
                         <div className='text-white mt-10'>
@@ -210,8 +216,10 @@ const Certification = () => {
               <div className=' '>
                 {LeaderBoard.map(item => (
                   <div key={item.id} className='gap-3 p-2 flex justify-between items-center m-2 border rounded-md shadow text-sm cursor-pointer hover:bg-gray-400/10'>
-                    <div className=''>
-                      <span className='px-3'>v</span>
+                    <div className=' flex justify-start items-center'>
+                      <div className='px-3'>
+                        <img src={bronzeCup} alt="bronze" className='w-10 h-10' />
+                      </div>
                       <span>{item.name}</span>
                     </div>
                     <span className='font-bold'>{item.points}xp</span>

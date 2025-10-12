@@ -10,7 +10,7 @@ import Attendance from './pages/DashBoardPages/Attendance/Attendance.tsx';
 import Certification from './pages/DashBoardPages/Certification/Certification.tsx';
 import Message from './pages/DashBoardPages/Message/Message.tsx';
 import Course from './pages/DashBoardPages/Course.tsx';
-import Settings from './pages/DashBoardPages/Settings.tsx';
+import Settings from './pages/DashBoardPages/Settings/Settings.tsx';
 import Tools from './pages/DashBoardPages/Tools.tsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ViewCourse from './pages/DashBoardPages/ViewCourse.tsx';
