@@ -143,7 +143,7 @@ const Feed = () => {
 
 
   return (
-
+    
     <>
 
       <div className='w-full  lg:flex lg:justify-center lg:flex-col'>
@@ -170,32 +170,35 @@ const Feed = () => {
                   <button className='p-2  bg-black text-white text-[10px] rounded-md lg:hidden'>Ask Eduai</button>
                 </div>
               </div>
-              <div className=' lg:border-[1.5px] lg:border-gray-200 mt-1 lg:h-[535px] bg-white py-2 px-1 rounded-lg lg:shadow-lg  overflow-y-auto'>
-                {recentUpdates.map((update) => (
-                  <div key={update.id} className='w-full h-24  lg:h-24 lg:bg-[#F7F6F6] border border-gray-300 rounded flex shadow-[#F7F6F6] mb-2 lg:mb-2 lg:mt-1 '>
-                    <div className={`w-[6px] lg:w-1 h-full rounded-l-xl ${update.color} `}>
+              <div>
+                <button className='p-2  bg-black text-white text-[10px] rounded-md lg:hidden'>Ask Eduai</button>
+              </div>
+            </div>
+            <div className=' lg:border-[1.5px] lg:border-gray-200 mt-1 lg:h-[535px] bg-white py-2 px-1 rounded-lg lg:shadow-lg  overflow-y-auto'>
+              {recentUpdates.map((update) => (
+                <div key={update.id} className='w-full h-24  lg:h-24 lg:bg-[#F7F6F6] border border-gray-300 rounded flex shadow-[#F7F6F6] mb-2 lg:mb-2 lg:mt-1 '>
+                  <div className={`w-[6px] lg:w-1 h-full rounded-l-xl ${update.color} `}>
 
+                  </div>
+                  
+                  <div className='flex  justify-between items-center  w-full py-1 px-2 lg:px-2'>
+                    <div className='  h-full w-full '>
+                      <div className=' flex flex-col justify-between '>
+                        <h3 className='text-sm lg:text-[12px] font-semibold'>{update.title}</h3>
+                        <p className='text-[8px] lg:my-0'>{update.time}</p>
+                        <p className='text-[10px] py-1 line-clamp-1 lg:line-clamp-1 w-full h-auto '>{update.description}</p>
+
+                      </div>
+
+                      <button className=' p-1  w-24 my-2  bg-black rounded-md text-white capitalize font-medium text-[10px] hidden lg:block '>{update.buttonText}</button>
                     </div>
-
-                    <div className='flex  justify-between items-center  w-full py-1 px-2 lg:px-2'>
-                      <div className='  h-full w-full '>
-                        <div className=' flex flex-col justify-between '>
-                          <h3 className='text-sm lg:text-[12px] font-semibold'>{update.title}</h3>
-                          <p className='text-[8px] lg:my-0'>{update.time}</p>
-                          <p className='text-[10px] py-1 line-clamp-1 lg:line-clamp-1 w-full h-auto '>{update.description}</p>
-
-                        </div>
-
-                        <button className=' p-1  w-24 my-2  bg-black rounded-md text-white capitalize font-medium text-[10px] hidden lg:block '>{update.buttonText}</button>
-                      </div>
-                      <div>
-                        <button className='bg-[#f4d6eb] text-black w-24 p-2 text-[10px] font-medium rounded-md'>{update.categories}</button>
-                      </div>
+                    <div>
+                      <button className='bg-[#f4d6eb] text-black w-24 p-2 text-[10px] font-medium rounded-md'>{update.categories}</button>
                     </div>
                   </div>
-                ))}
+                </div>
+              ))}
 
-              </div>
             </div>
             <div className='w-full lg:w-[50%]'>
               <div className="grid grid-cols-2 h-50  lg:flex-wrap gap-2 lg:gap-5  lg:my-1 w-full rounded-lg ">
@@ -234,49 +237,64 @@ const Feed = () => {
                         />
                       </div>
 
-                      {/* Description + Button */}
-                      <div
-                        className={`flex flex-col w-full  justify-between flex-1 ${activity.color} text-black`}
-                      >
-                        <p className="p-1 text-[10px] text-wrap line-clamp-2">{activity.description}</p>
-                        <button className="bg-black text-white text-[10px]  w-16 py-1 m-1 rounded-md">
-                          View
-                        </button>
-                      </div>
+              <div className="flex gap-2 p-1 w-full  overflow-x-auto overflow-y-hidden  whitespace-nowrap">
+                {activitiesAndBadges.map((activity) => (
+                  <div
+                    key={activity.id}
+                    className="h-44 w-40 rounded-lg flex flex-col shadow shadow-gray-400 overflow-hidden flex-shrink-0"
+                  >
+                    {/* Badge image */}
+                    <div className="flex items-center justify-center bg-white h-24 w-full">
+                      <img
+                        src={activity.badge}
+                        alt={activity.title}
+                        className="max-h-24 max-w-full object-contain"
+                      />
                     </div>
 
-                  ))}
-                </div>
-                <div className='p-2 hidden lg:flex flex-col items-center justify-center mt-2'>
-                  <div className='flex flex-col justify-start w-full items-start'>
-                    <h1 className='font-bold text-xl'>Ask Eduai</h1>
-                    <h3 className='text-[10px]'>Common Task & SHortcuts</h3>
-                  </div>
-
-                  {/* divide section */}
-                  <div className='border border-gray-300 my-2 h-56  rounded-md p-2 w-full'>
+                    {/* Description + Button */}
                     <div
-                      style={{ backgroundImage: `url(${AskEduAi})` }}
-                      className="relative bg-no-repeat  bg-center w-full h-40 rounded-lg shadow-md flex flex-col items-center justify-center text-white"
+                      className={`flex flex-col w-full  justify-between flex-1 ${activity.color} text-black`}
                     >
-                      <div className="absolute inset-0 bg-[black/15]"></div> {/* overlay */}
-                      <span className="relative z-10">
-                      </span>
+                      <p className="p-1 text-[10px] text-wrap line-clamp-2">{activity.description}</p>
+                      <button className="bg-black text-white text-[10px]  w-16 py-1 m-1 rounded-md">
+                        View
+                      </button>
                     </div>
-                    <div className='flex justify-between items-center w-full  h-14  '>
-
-                      <button className='bg-[#D9D9D9] p-2 ml-2 rounded-md'><FaPlus size={12} /></button>
-                      <input type="text" className='w-[80%] mx-2 p-1 bg-[#F7F6F6] rounded-sm outline outline-[#F7F6F6] ' placeholder='Type Your questions here ?' />
-                      <button className='text-[#F6F6F6] rounded-md bg-[#0843F7] p-2'><IoMdSend size={12} /></button>
-                    </div>
-
                   </div>
+
+                ))}
+              </div>
+              <div className='p-2 hidden lg:flex flex-col items-center justify-center mt-2'>
+                <div className='flex flex-col justify-start w-full items-start'>
+                  <h1 className='font-bold text-xl'>Ask Eduai</h1>
+                  <h3 className='text-[10px]'>Common Task & SHortcuts</h3>
+                </div>
+
+                {/* divide section */}
+                <div className='border border-gray-300 my-2 h-56  rounded-md p-2 w-full'>
+                  <div
+                    style={{ backgroundImage: `url(${AskEduAi})` }}
+                    className="relative bg-no-repeat  bg-center w-full h-40 rounded-lg shadow-md flex flex-col items-center justify-center text-white"
+                  >
+                    <div className="absolute inset-0 bg-[black/15]"></div> {/* overlay */}
+                    <span className="relative z-10">
+                    </span>
+                  </div>
+                  <div className='flex justify-between items-center w-full  h-14  '>
+
+                    <button className='bg-[#D9D9D9] p-2 ml-2 rounded-md'><FaPlus size={12} /></button>
+                    <input type="text" className='w-[80%] mx-2 p-1 bg-[#F7F6F6] rounded-sm outline outline-[#F7F6F6] ' placeholder='Type Your questions here ?' />
+                    <button className='text-[#F6F6F6] rounded-md bg-[#0843F7] p-2'><IoMdSend size={12} /></button>
+                  </div>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </>
   )
 }
