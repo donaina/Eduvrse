@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IoIosSearch } from "react-icons/io";
 // @ts-ignore 
 import mycourse from '../../../Assets/images/mycourse.jpg';
 import { FiDownload } from "react-icons/fi";
 import { CiPlay1 } from "react-icons/ci";
 import { useNavigate, Outlet, useLocation } from "react-router-dom";
+import { FaArrowsAlt } from "react-icons/fa";
+import { GoArrowDownLeft } from "react-icons/go";
+
 
 
 const MyCourse = () => {
   const navigate = useNavigate();
   const locate = useLocation()
 
+  const [progress, setProgress] = useState(10);
 
+  const radius = 70;
+  const strokeWidth = 12;
+  const normalizedRadius = radius - strokeWidth / 2;
+  const circumference = normalizedRadius * 2 * Math.PI;
+  const strokeDashoffset = circumference - (progress / 100) * circumference;
   const mycourseData = [
     {
       id: 1,
@@ -59,7 +68,7 @@ const MyCourse = () => {
     <>
       {locate.pathname === '/my-course' ?
         <div className='h-full w-full px-3 lg:px-6'>
-          <div className='flex items-center my-6'>
+          <div className='flex items-center '>
             <div className='w-full lg:w-auto mr-24'>
               <h1 className='font-medium text-2xl lg:text-lg '>My <span className='text-[#0843F7]'>Courses</span> !</h1>
               <h3 className='text-xs hidden lg:block'>continue your learning journey</h3>
@@ -71,13 +80,13 @@ const MyCourse = () => {
             <button className='p-2 lg:hidden'><IoIosSearch size={30} /></button>
 
           </div>
-          <div className='w-full bg-gray-50 flex gap-5'>
+          <div className='w-full bg-white flex gap-5'>
             <div className='w-full '>
 
               {
                 mycourseData.map(item => (
                   <div key={item.id} className='w-full flex flex-col lg:flex-row justify-between items-center rounded-lg lg:items-start my-6 gap-4'>
-                    <div className='w-full lg:w-full h-44 lg:h-80 p-2 outline outline-[#F7F6F6] bg-[#F7F6F6] flex  gap-3 rounded-lg'>
+                    <div className='w-full lg:w-full h-44 lg:h-80 p-2 outline outline-[#F7F6F6] bg-[#0C7FDA]/10 flex  gap-3 rounded-lg'>
                       <div className="w-3/4 h-full relative rounded ">
                         <img
                           src={item.img}
@@ -112,9 +121,11 @@ const MyCourse = () => {
                           <h5 className=''>18/25 chapters</h5>
                           <p>12 weeks</p>
                         </div>
-                        <div className='w-full h-[25px] lg:h-12 my-2 text-white flex justify-between items-center'>
-                          <button className='bg-black w-5/6 h-full rounded' onClick={() => navigate(`/my-course/${item.id}`)}>Continue</button>
-                          <button className='bg-black w-[13%] h-full flex justify-center items-center rounded'><FiDownload /></button>
+                        <div className='flex justify-end mt-1  lg:mt-2 xl:mt-6 relative'>
+                          <div className=' h-[27px] w-full lg:h-12 my-2 text-white flex justify-end  items-center absolute gap-2'>
+                            <button className='bg-black w-48 h-full rounded' onClick={() => navigate(`/my-course/${item.id}`)}>Continue</button>
+                            <button className='bg-black w-16 h-full flex justify-center items-center rounded'><FiDownload /></button>
+                          </div>
                         </div>
 
                       </div>
@@ -125,47 +136,57 @@ const MyCourse = () => {
 
             </div>
 
-            <div className='w-[40%] hidden lg:block '>
-              <h1 className='text-xl font-semibold py-4'>Progress</h1>
-              <p className='bg-black w-[80%] h-1 rounded-r-lg'></p>
-              <p className='bg-black w-[60%] h-1 my-2 rounded-r-lg'></p>
-              <p className='bg-black w-[40%] h-1 rounded-r-lg'></p>
-
-              <div className='w-full h-[30%] bg-[#CEE9FF] mt-6 rounded-lg'>
-                <div className='w-full h-[25%] bg-[#2096F3] p-2 my-4 flex justify-center items-center rounded-lg'>
-                  <div className='w-[30%] h-[90%] rounded-full border-white border-4 flex justify-center items-center' >
-                    <span className='text-5xl text-white' >90</span>
-                  </div>
-                  <div className='ml-4 px-2 text-white'>
-                    <p className='text-lg'>Computer Science Fundermentals</p>
-                    <p className='bg-white w-[100%] h-1 rounded-lg'><p className='bg-green-400 w-[50%] h-1 rounded-lg'></p></p>
-
+            <div className='w-[40%] hidden lg:block p-2 outline outline-[#F7F6F6] bg-white rounded-lg h-[290px] mt-6 '>
+              <div className='px-4'>
+                <div className=' w-full flex justify-between  text-sm font-semibold '><p>Courses Completion Rate</p><p className='text-[#9C907F]'><FaArrowsAlt size={20} /></p></div>
+                <div className='flex w-full items-center gap-3'>
+                  <p className='text-xl font-semibold'>Poor</p>
+                  <div className='text-red-600 flex items-center gap-1'>
+                    <p > <GoArrowDownLeft /></p>
+                    <p>4.67%</p>
                   </div>
 
                 </div>
-                <div className='w-full h-[25%] bg-[#2096F3] p-2 my-4 flex justify-center items-center rounded-lg'>
-                  <div className='w-[30%] h-[90%] rounded-full border-white border-4 flex justify-center items-center' >
-                    <span className='text-5xl text-white' >29</span>
-                  </div>
-                  <div className='ml-4 px-2 text-white'>
-                    <p className='text-lg'>Computer Science Fundermentals</p>
-                    <p className='bg-white w-[100%] h-1 rounded-lg'><p className='bg-green-400 w-[50%] h-1 rounded-lg'></p></p>
+                <div className='flex justify-center items-center mt-10'>
+                  <div className="relative inline-flex items-center justify-center mb-8">
+                    <svg
+                      height={radius * 2}
+                      width={radius * 2}
+                      className="transform -rotate-90"
+                    >
+                      {/* Background circle */}
+                      <circle
+                        stroke="#e5e7eb"
+                        fill="transparent"
+                        strokeWidth={strokeWidth}
+                        r={normalizedRadius}
+                        cx={radius}
+                        cy={radius}
+                      />
+                      {/* Progress circle */}
+                      <circle
+                        stroke="#3b82f6"
+                        fill="transparent"
+                        strokeWidth={strokeWidth}
+                        strokeDasharray={circumference + ' ' + circumference}
+                        style={{ strokeDashoffset }}
+                        strokeLinecap="round"
+                        r={normalizedRadius}
+                        cx={radius}
+                        cy={radius}
+                        className="transition-all duration-500 ease-out"
+                      />
+                    </svg>
+                    {/* Center text */}
+                    <div className="absolute flex flex-col items-center">
+                      <span className="text-3xl font-bold text-red-500">{progress}%</span>
 
-                  </div>
-
-                </div>
-                <div className='w-full h-[25%] bg-[#2096F3] p-2 my-4 flex justify-center items-center rounded-lg'>
-                  <div className='w-[30%] h-[90%] rounded-full border-white border-4 flex justify-center items-center' >
-                    <span className='text-5xl text-white' >50</span>
-                  </div>
-                  <div className='ml-4 px-2 text-white'>
-                    <p className='text-lg'>Computer Science Fundermentals</p>
-                    <p className='bg-white w-[100%] h-1 rounded-lg'><p className='bg-green-400 w-[50%] h-1 rounded-lg'></p></p>
-
+                    </div>
                   </div>
 
                 </div>
               </div>
+
             </div>
           </div>
         </div> :

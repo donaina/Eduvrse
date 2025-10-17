@@ -1,7 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 // @ts-ignore
-import SubmitIcon from '../../../Assets/images/submitIcon.png'
+import SubmitIcon from '../../../Assets/images/style.png'
+
 
 const AssessmentModal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
     const navigate = useNavigate()
@@ -14,7 +15,7 @@ const AssessmentModal = ({ open, onClose }: { open: boolean; onClose: () => void
                     <img
                         src={SubmitIcon}
                         alt="Submit Icon"
-                        className="w-[34px] h-[34px]"
+                        className="w-24 h-24 object-contain"
                     />
                 </div>
                 <div className="text-center mt-4 mb-4">
