@@ -89,20 +89,6 @@ const Assessment = () => {
       assessment.course.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Helper for difficulty color
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty.toLowerCase()) {
-      case 'easy':
-        return 'bg-green-100 text-green-700';
-      case 'medium':
-        return 'bg-yellow-100 text-yellow-700';
-      case 'hard':
-        return 'bg-red-100 text-red-700';
-      default:
-        return 'bg-gray-100 text-gray-700';
-    }
-  };
-
   return (
     <div className='flex h-auto bg-gray-100/5'>
       {/* Main Content */}

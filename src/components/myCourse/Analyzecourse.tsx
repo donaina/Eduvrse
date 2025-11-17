@@ -1,5 +1,5 @@
 import React from 'react'
-import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, ComposedChart } from 'recharts';
+import { Line, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, ComposedChart } from 'recharts';
 import { Maximize2 } from 'lucide-react';
 const Analyzecourse = () => {
     const data = [
