@@ -2,7 +2,7 @@ import React from 'react'
 // @ts-ignore
 import cloud from '../../Assets/images/cloud.png';
 import { IoIosSearch } from 'react-icons/io';
-import { ChevronDown, CloudUpload } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const Editcourse = () => {
 
