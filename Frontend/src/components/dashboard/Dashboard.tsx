@@ -3,7 +3,7 @@ import { BsDot } from 'react-icons/bs';
 import { Outlet, Link, useLocation, NavLink } from 'react-router-dom';
 import { IoMenuOutline, IoLogOut } from 'react-icons/io5';
 import React, { useState, useRef, useEffect } from 'react';
-import Notification from '../../components/Notification.tsx';
+import Notification from '../Notification.tsx';
 // @ts-ignore
 import eduverseLabsLogo from '../../Assets/images/eduverseLogo2.png';
 

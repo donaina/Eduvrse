@@ -1,0 +1,10 @@
+[build]
+  # Use npm from the repository root to run the frontend build inside the Frontend folder.
+  # This avoids changing the Netlify Base directory in the UI.
+  command = "npm run build --prefix Frontend"
+  publish = "Frontend/build"
+
+[context.production.environment]
+  # Keep CI=true (default) so CRA treats lint warnings as errors in CI —
+  # we prefer fixing lints. If you need a temporary bypass, set CI=false in Netlify UI.
+  # CI = "true"
