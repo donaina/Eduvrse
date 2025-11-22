@@ -99,7 +99,7 @@ const MyCourse = () => {
                       </div>
 
 
-                      <div className='w-full h-full'>
+                      <div className='w-full h-full '>
                         <div className='flex lg:justify-between  items-center w-full'>
                           <div className='w-full '>
                             <h1 className='font-extrabold lg:font-semibold text-[12px] lg:text-lg lg:my-2 text-black flex  w-full  '>{item.title}</h1>
@@ -121,9 +121,9 @@ const MyCourse = () => {
                           <h5 className=''>18/25 chapters</h5>
                           <p>12 weeks</p>
                         </div>
-                        <div className='flex justify-end mt-1  lg:mt-2 xl:mt-6 relative'>
-                          <div className=' h-[27px] w-full lg:h-12 my-2 text-white flex justify-end  items-center absolute gap-2'>
-                            <button className='bg-black w-48 h-full rounded' onClick={() => navigate(`/my-course/${item.id}`)}>Continue</button>
+                        <div className='flex justify-end md:mt-1  lg:mt-2 xl:mt-6 relative'>
+                          <div className=' h-[24px] md:h-[27px] w-full lg:h-12 my-2 text-white flex justify-end  items-center absolute gap-2'>
+                            <button className='bg-black w-32 md:w-48 text-sm h-full rounded' onClick={() => navigate(`/my-course/${item.id}`)}>Continue</button>
                             <button className='bg-black w-16 h-full flex justify-center items-center rounded'><FiDownload /></button>
                           </div>
                         </div>

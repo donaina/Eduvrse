@@ -109,12 +109,12 @@ const Feed = () => {
   ];
 
   return (
-    <div className="w-full lg:flex lg:justify-center lg:flex-col">
+    <div className="  w-full ">
       <div className="mx-4 my-2 ">
-        <div className="flex flex-col lg:justify-between lg:flex-row mt-1 gap-x-4">
-          {/* LEFT SECTION */}
-          <div className="w-full lg:w-[48%]">
-            <div className="flex items-center justify-between h-48 mb-2 bg-gray-200/35 gap-2 rounded-lg">
+        <div className="">
+          {/* top SECTION */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 ">
+            <div className="flex items-center justify-between h-48 mb-2 px-5 bg-gray-200/35 gap-2 rounded-lg">
               <div className='p-2'>
                 <h2 className="text-black text-lg lg:text-2xl font-bold">Welcome back, <span className='text-green-400'>Rolake!</span></h2>
                 <p className='text-xs'>Here is what is happening with your studies today.</p>
@@ -122,49 +122,11 @@ const Feed = () => {
               <img src={style} alt="Style" className=' object-contain w-48  h-48' />
             </div>
 
-            <div className="flex justify-between items-center mb-2">
-              <div>
-                <h1 className="font-semibold text-xl lg:text-xl">Recent Updates</h1>
-                <h5 className="text-[8px] lg:text-[10px] mt-1 ">Latest Activities & Notifications</h5>
-              </div>
-              <button className="p-2 bg-black text-white text-[10px] rounded-md lg:hidden">
-                Ask Eduai
-              </button>
-            </div>
-
-            <div className="lg:border  border-gray-200 mt-1 lg:h-[500px] bg-white py-2 px-1 rounded-lg lg:shadow-lg overflow-y-auto">
-              {recentUpdates.map((update) => (
-                <div
-                  key={update.id}
-                  className="w-full h-24 bg-[#F7F6F6] border border-gray-300 rounded flex mb-2"
-                >
-                  <div className={`w-[6px] h-full rounded-l-xl ${update.color}`} />
-                  <div className="flex justify-between items-center w-full py-1 px-2">
-                    <div>
-                      <h3 className="text-sm font-semibold">{update.title}</h3>
-                      <p className="text-[8px]">{update.time}</p>
-                      <p className="text-[10px] py-1 line-clamp-1">{update.description}</p>
-                      <button className="p-1 w-24 my-2 bg-black rounded-md text-white capitalize font-medium text-[10px] hidden lg:block">
-                        {update.buttonText}
-                      </button>
-                    </div>
-                    <button className="bg-[#f4d6eb] text-black w-24 p-2 text-[10px] font-medium rounded-md">
-                      {update.categories}
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* RIGHT SECTION */}
-          <div className="w-full lg:w-[50%]">
-            {/* Feed Events */}
             <div className="grid grid-cols-2 h-48 gap-2 mb-2 w-full rounded-lg">
               {feedEvents.map((event) => (
                 <div
                   key={event.id}
-                  className="bg-[#F7F6F6] p-2 mt-1 rounded-lg border border-gray-300 shadow-md flex items-center justify-between"
+                  className="bg-[#F7F6F6] py-2 px-4 mt-1 rounded-lg border border-gray-300 shadow-md flex items-center justify-between"
                 >
                   <div>
                     <h2 className="text-xs font-bold">{event.title}</h2>
@@ -179,68 +141,113 @@ const Feed = () => {
                 </div>
               ))}
             </div>
+          </div>
 
-            {/* Activities & Badges */}
+
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
+            {/* Feed Events */}
+
             <div>
-              <h1 className="font-semibold text-xl">Activities & Badges</h1>
-              <h5 className="text-[8px] lg:text-[10px] mt-1 ">
-                Catch up on activities and earn badges
-              </h5>
-            </div>
+              <div className="flex justify-between items-center mb-2">
+                <div>
+                  <h1 className="font-semibold text-xl lg:text-xl">Recent Updates</h1>
+                  <h5 className="text-[8px] lg:text-[10px] mt-1 ">Latest Activities & Notifications</h5>
+                </div>
+                <button className="p-2 bg-black text-white text-[10px] rounded-md lg:hidden">
+                  Ask Eduai
+                </button>
+              </div>
 
-            <div className="lg:border border-gray-200 mt-2 lg:h-[500px] bg-white py-2 px-1 rounded-lg lg:shadow-lg">
-              <div className="flex gap-2 p-1 w-full overflow-x-auto whitespace-nowrap">
-                {activitiesAndBadges.map((activity) => (
+              <div className="lg:border  border-gray-200 mt-1 lg:h-[500px] bg-white py-2 px-1 rounded-lg lg:shadow-lg overflow-y-auto">
+                {recentUpdates.map((update) => (
                   <div
-                    key={activity.id}
-                    className="h-44 w-40 rounded-lg flex flex-col shadow shadow-gray-400 overflow-hidden flex-shrink-0"
+                    key={update.id}
+                    className="w-full h-32 bg-[#F7F6F6]  border border-gray-300 rounded flex mb-2"
                   >
-                    <div className="flex items-center justify-center bg-white h-24 w-full">
-                      <img
-                        src={activity.badge}
-                        alt={activity.title}
-                        className="max-h-24 max-w-full object-contain"
-                      />
-                    </div>
-                    <div className={`flex flex-col justify-between flex-1 ${activity.color} text-black`}>
-                      <p className="p-1 text-[10px] w-[96%] h-10 line-clamp-2 text-wrap">{activity.description}</p>
-                      <button className="bg-black text-white text-[10px] w-16 py-1 m-1 rounded-md">
-                        View
+                    <div className={`w-[6px] h-full rounded-l-xl ${update.color}`} />
+                    <div className="flex justify-between items-center w-full  px-4">
+                      <div>
+                        <h3 className="text-sm font-semibold pt-2">{update.title}</h3>
+                        <p className="text-[8px]">{update.time}</p>
+                        <p className="text-[10px] h-11 py-1 line-clamp-1">{update.description}</p>
+                        <button className="p-1 w-24 my-2 bg-black rounded-md text-white capitalize font-medium text-[10px] hidden lg:block">
+                          {update.buttonText}
+                        </button>
+                      </div>
+                      <button className="bg-[#f4d6eb] text-black w-24 p-2 text-[10px] font-medium rounded-md">
+                        {update.categories}
                       </button>
                     </div>
                   </div>
                 ))}
               </div>
+            </div>
 
-              {/* Ask EduAI Section */}
-              <div className="p-2 hidden lg:flex flex-col items-center justify-center mt-1">
-                <div className="flex flex-col justify-start w-full items-start">
-                  <h1 className="font-semibold text-xl">Ask Eduai</h1>
-                  <h3 className="text-[10px]">Common Tasks & Shortcuts</h3>
+
+            <div>
+              {/* Activities & Badges */}
+              <div>
+                <h1 className="font-semibold text-xl">Activities & Badges</h1>
+                <h5 className="text-[8px] lg:text-[10px] mt-1 ">
+                  Catch up on activities and earn badges
+                </h5>
+              </div>
+
+              <div className="lg:border border-gray-200 mt-2 lg:h-[500px] bg-white py-2 px-1 rounded-lg lg:shadow-lg">
+                <div className="flex gap-2 p-1 w-full overflow-x-auto whitespace-nowrap">
+                  {activitiesAndBadges.map((activity) => (
+                    <div
+                      key={activity.id}
+                      className="h-44 w-40 rounded-lg flex flex-col shadow shadow-gray-400 overflow-hidden flex-shrink-0"
+                    >
+                      <div className="flex items-center justify-center bg-white h-24 w-full">
+                        <img
+                          src={activity.badge}
+                          alt={activity.title}
+                          className="max-h-24 max-w-full object-contain"
+                        />
+                      </div>
+                      <div className={`flex flex-col justify-between p-1 flex-1 ${activity.color} text-black`}>
+                        <p className="p-1 text-[10px] w-[96%] h-10 line-clamp-2 text-wrap">{activity.description}</p>
+                        <button className="bg-black text-white text-[10px] w-16 py-1 m-1 rounded-md">
+                          View
+                        </button>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="border border-gray-300 my-1 h-56 rounded-md p-2 w-full">
-                  <div
-                    style={{ backgroundImage: `url(${AskEduAi})` }}
-                    className="relative bg-no-repeat bg-center w-full h-40 rounded-lg shadow-md"
-                  >
-                    <div className="absolute inset-0 bg-black/15"></div>
+
+                {/* Ask EduAI Section */}
+                <div className="p-2 hidden lg:flex flex-col items-center justify-center mt-1">
+                  <div className="flex flex-col justify-start w-full items-start">
+                    <h1 className="font-semibold text-xl">Ask Eduai</h1>
+                    <h3 className="text-[10px]">Common Tasks & Shortcuts</h3>
                   </div>
-                  <div className="flex justify-between items-center w-full h-14">
-                    <button className="bg-[#D9D9D9] p-2 ml-2 rounded-md">
-                      <FaPlus size={12} />
-                    </button>
-                    <input
-                      type="text"
-                      className="w-[80%] mx-2 p-1 bg-[#F7F6F6] rounded-sm outline-none"
-                      placeholder="Type your question here..."
-                    />
-                    <button className="text-[#F6F6F6] rounded-md bg-[#0843F7] p-2">
-                      <IoMdSend size={12} />
-                    </button>
+                  <div className="border border-gray-300 my-1 h-56 rounded-md p-2 w-full">
+                    <div
+                      style={{ backgroundImage: `url(${AskEduAi})` }}
+                      className="relative bg-no-repeat bg-center w-full h-40 rounded-lg shadow-md"
+                    >
+                      <div className="absolute inset-0 bg-black/15"></div>
+                    </div>
+                    <div className="flex justify-between items-center w-full h-14">
+                      <button className="bg-[#D9D9D9] p-2 ml-2 rounded-md">
+                        <FaPlus size={12} />
+                      </button>
+                      <input
+                        type="text"
+                        className="w-[80%] mx-2 p-1 bg-[#F7F6F6] rounded-sm outline-none"
+                        placeholder="Type your question here..."
+                      />
+                      <button className="text-[#F6F6F6] rounded-md bg-[#0843F7] p-2">
+                        <IoMdSend size={12} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
           </div> {/* END RIGHT */}
         </div>
       </div>

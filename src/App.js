@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import DashBoard from './DashBoard.tsx';
+
 import Feed from './pages/DashBoardPages/Feed.tsx';
 import Login from './pages/Authentication/Login.tsx'
 import Register from './pages/Authentication/Register.tsx'
@@ -19,6 +20,25 @@ import AssessmentQuestions from './pages/DashBoardPages/Assessment/AssessmentQue
 import { AssessmentRoute } from './pages/DashBoardPages/Assessment/AssessmentRoute.tsx';
 import CertificationBadges from './pages/DashBoardPages/Certification/CertificationBadges.tsx';
 import CertififcationOutlet from './pages/DashBoardPages/Certification/CertififcationOutlet.tsx';
+
+// instructor imports
+import InstructotDashboard from './components/dashboard/Dashboard.tsx';
+import InstructorFeed from './components/feed/Feed.tsx';
+import InstructorCourseOutlet from './components/myCourse/CourseOutlet.tsx';
+import InstructoreMycourse from './components/myCourse/MyCourse.tsx';
+import InstructorEditcourse from './components/myCourse/Editcourse.tsx';
+import InstructorAnalyzecourse from './components/myCourse/Analyzecourse.tsx';
+import InstructorAssessmentRoute  from './components/Assessment/AssessmentRoute.tsx';
+import InstructorAssessment from './components/Assessment/Assessment.tsx';
+import InstructorAssessmentQuestions from './components/Assessment/AssessmentQuestions.tsx';
+import InstructorAttendance from './components/Attendance/Attendance.tsx';
+import InstructorMessage from './components/Message/Message.tsx';
+import InstructorSettings from './components/Settings/Settings.tsx';
+
+
+
+
+
 
 function App() {
   return (
@@ -50,7 +70,37 @@ function App() {
               <Route path="settings" element={<Settings />} />
               <Route path="tools" element={<Tools />} />
               <Route path="*" element={<Feed />} /> {/* Default route */}
-              {/* Add the rest */}
+              
+            </Route>
+
+
+            {/* instructor route */}
+            <Route path="/" element={<InstructotDashboard />}>
+              <Route path="/instructor/feed" index element={<InstructorFeed />} />
+              <Route path="/" element={<InstructorCourseOutlet />} >
+                <Route path='/instructor/course' index element={<InstructoreMycourse />} />
+                <Route path='/instructor/edit-course' element={<InstructorEditcourse />} />
+                <Route path='/instructor/analysis' element={<InstructorAnalyzecourse />} />
+              </Route>
+              <Route path="/"  element={<InstructorAssessmentRoute />} >
+                <Route path='/instructor/assessment' index element={<InstructorAssessment />} />
+                <Route path='/instructor/assessmentQuestion' index element={<InstructorAssessmentQuestions />} />
+               
+              </Route>
+
+              <Route path="/instructor/attendance" element={<InstructorAttendance />} />
+              {/* <Route path="/" element={<CertififcationOutlet />} >
+                <Route path='/certification' index element ={<Certification/>}/>
+                <Route path='/certificationBadge' element ={<CertificationBadges/>}/>
+              </Route> */}
+              <Route path="/instructor/messages" element={<InstructorMessage />} />
+              {/* <Route path="course" element={<Course />} /> */}
+              <Route path="/instructor/settings" element={<InstructorSettings />} />
+              {/* <Route path="tools" element={<Tools />} /> */}
+              <Route path="*" element={<Feed />} /> {/* Default route */}
+              
+              <Route path="*" element={<Feed />} /> {/* Default route */}
+
             </Route>
           </Routes>
         </BrowserRouter>

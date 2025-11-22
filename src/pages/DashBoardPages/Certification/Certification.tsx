@@ -131,15 +131,15 @@ const Certification = () => {
 
   return (
     <>
-      <div className='px-6 flex flex-col gap-6'>
+      <div className='px-4 w-full '>
         <div>
-          <h1 className='font-semibold text-xl'>Certificates & Achievement </h1>
-          <p className='text-xs'>Your learning Accomplishments and Certification</p>
+          <h1 className='font-semibold text-md md:text-xl'>Certificates & Achievement </h1>
+          <p className='text-[10px] md:text-xs'>Your learning Accomplishments and Certification</p>
         </div>
-        <div className='flex gap-6 mt-4'>
-          <div className='w-[70%] font-semibold text-md my-2 '>
-            <h1 className='my-2 font-bold text-2xl'>Statistics</h1>
-            <div className='grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-2 '>
+        <div className='w-full flex md:flex md:justify-between gap-6 '>
+          <div className=' w-full md:w-[70%] font-semibold text-md my-2 '>
+            <h1 className='my-1 font-bold text-2xl'>Statistics</h1>
+            <div className='grid grid-cols-2 gap-4  '>
               {statisticData.map(item => (
                 <div key={item.id} className='flex gap-4 p-4 rounded-lg shadow-md bg-[#EFF3FF] text-black'>
                   <div className='w-12 h-12 lg:w-16 lg:h-16'>
@@ -162,15 +162,15 @@ const Certification = () => {
                 <h1 className='text-xl font-semibold'>Badges</h1>
                 <Link to= "/certificationBadge" ><button className=' px-2 py-1 text-white bg-black text-sm rounded-md'>View All</button></Link>
               </div>
-              <div className='flex gap-4 overflow-x-auto mt-4 p-2'>
+              <div className='grid grid-cols-1 md:grid-cols-4 gap-2 overflow-x-auto mt-4 pr-2'>
                 {topBadges.map(item => (
-                  <div key={item.id} className='flex min-w-[120px] lg:min-w-[160px] bg-white rounded-lg gap-4 shadow-md p-1 hover:bg-gray-400/10 cursor-pointer'>
-                    <div className='w-full h-16 lg:h-24 '>
+                  <div key={item.id} className='flex bg-white rounded-lg gap-4 border shadow-sm p-1 hover:bg-gray-400/10 cursor-pointer'>
+                    <div className='w-20 h-16 lg:h-24 '>
                       <img src={item.img} alt={item.title} className='w-full h-full object-contain rounded-lg' />
                     </div>
                     <div>
-                      <h2 className={`font-semibold text-md mt-2 ${item.color}`}>{item.title}</h2>
-                      <p className='text-sm text-gray-600 mt-1'>{item.description}</p>
+                      <h2 className={`font-semibold text-xs mt-2 ${item.color}`}>{item.title}</h2>
+                      <p className='text-xs text-gray-600 mt-1'>{item.description}</p>
                       {/* <p className='text-xs text-gray-400 mt-2'>{item.date}</p> */}
                     </div>
                   </div>
@@ -178,22 +178,24 @@ const Certification = () => {
               </div>
               <div className='my-4'>
                 <div className='flex justify-between items-center mt-10 mb-16 '>
-                  <h1 className='text-xl font-semibold'>Certification</h1>
+                  <h1 className='text-md md:text-xl font-semibold'>Certification</h1>
                   <button className=' px-2 py-1 text-white bg-black text-sm rounded-md'>View All</button>
                 </div>
-                <div className='flex gap-4'>
+
+                <div>
+                  <div className='grid md:grid-cols-3 gap-4 overflow-x-auto '>
                   {DownloadCertification.map(item => (
-                    <div className='w-64 h-80  rounded-md hover:bg-gray-400/25 ' key={item.id}>
-                      <div className=' w-full h-40 bg-white rounded-t-md bg-gradient-to-t from-[#BEA1FF] to-[#EFF3FF] p-4'>
+                    <div className=' h-80  border shadow-sm rounded-md hover:bg-gray-400/25 ' key={item.id}>
+                      <div className=' w-full h-44 bg-white rounded-t-md bg-gradient-to-t from-[#BEA1FF] to-[#EFF3FF] p-4'>
                         <div className='flex justify-between items-center'>
                           <div >
                             <img src={vector} alt="vector" className='w-10 h-10' />
                           </div>
-                          <button className=' border border-[#EDFF24] rounded-full p-1 bg-green-300 text-sm'>Grade: <strong>{item.grade}</strong></button>
+                          <button className=' border border-[#EDFF24] rounded-full p-1 w-20 bg-green-300 text-xs md:text-sm'>Grade: <strong>{item.grade}</strong></button>
                         </div>
                         <div className='text-white mt-10'>
-                          <h1 className='font-semibold'>{item.title}</h1>
-                          <p className='text-xs my-3 font-light'>{item.course}</p>
+                          <h1 className='font-semibold text-sm md:text-md'>{item.title}</h1>
+                          <p className='text-xs md:my-3 font-light'>{item.course}</p>
                         </div>
                       </div>
                       <div>
@@ -207,10 +209,11 @@ const Certification = () => {
                       </div>
                     </div>))}
                 </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className='w-[25%] font-semibold text-md my-2'>
+          <div className=' hidden md:block md:w-[30%] font-semibold text-md my-2'>
             <h1 className='my-2 font-bold text-2xl'>Leaderboard</h1>
             <div className='border rounded-md w-full h-[80%] shadow-md'>
               <div className=' '>

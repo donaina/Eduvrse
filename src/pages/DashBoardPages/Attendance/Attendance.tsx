@@ -58,9 +58,9 @@ const Attendance = () => {
 
         <h1 className='text-xl mt-7 font-semibold'>Upcoming Events</h1>
 
-        <div className='flex'>
-          <div className='w-2/3 p-4 bg-[#F7F6F6]/50 mt-2'>
-            <div>
+        <div className='w-full md:flex'>
+          <div className='w-full md:w-2/3 p-4 '>
+            
               {upComingEvents.map((item, index) => (
 
                 <div key={index} className="bg-white  mb-4 rounded-lg shadow-md ">
@@ -94,15 +94,15 @@ const Attendance = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            
           </div>
-          <div className='w-1/3 hidden lg:block'>
+          <div className='hidden md:w-1/3  md:block'>
             <Mycalender />
           </div>
         </div>
           <h1 className='text-xl mt-7 font-semibold'>Attendance Record</h1>
           <div className='flex'>
-          <div className='w-2/3 p-4 bg-[#F7F6F6]/50 mt-2'>
+          <div className='w-full md:w-2/3 p-4 bg-[#F7F6F6]/50 mt-2'>
             <div>
               {upComingEvents.map((item, index) => (
 
