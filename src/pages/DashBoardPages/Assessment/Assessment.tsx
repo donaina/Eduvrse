@@ -142,8 +142,8 @@ const Assessment = () => {
         <h2 className='text-sm font-semibold my-4'>Available Assessments</h2>
 
         
-        <div className='w-full overflow-x-auto'>
-          <div className='flex gap-6 px-4 pb-4 min-w-max'>
+        <div className='w-screen overflow-x-auto'>
+          <div className='flex justify-center gap-6 px-4 pb-4 min-w-max'>
             {filteredAssessments.length === 0 ? (
               <div className='text-center py-12 w-full'>
                 <h2 className='text-xl font-semibold text-gray-600'>
@@ -157,7 +157,7 @@ const Assessment = () => {
               filteredAssessments.map((assessment) => (
                 <div
                   key={assessment.id}
-                  className='w-[350px] flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow'
+                  className='w-[300px] md:[350px] flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow'
                 >
                   <div className='p-6'>
                     <div className='flex justify-between items-start mb-4'>
@@ -223,8 +223,8 @@ const Assessment = () => {
         <h2 className='text-sm font-semibold my-4'>Upcoming Assessments </h2>
 
         
-        <div className='w-full overflow-x-auto'>
-          <div className='flex gap-6 px-4 pb-4 min-w-max'>
+        <div className='w-screen overflow-x-auto'>
+          <div className='flex gap-6 px-4 pb-4 min-w-max p-3'>
             {filteredAssessments.length === 0 ? (
               <div className='text-center py-12 w-full'>
                 <h2 className='text-xl font-semibold text-gray-600'>
@@ -238,7 +238,7 @@ const Assessment = () => {
               filteredAssessments.map((assessment) => (
                 <div
                   key={assessment.id}
-                  className='w-[350px] flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow'
+                  className='w-[300px] md:w-[350px] flex-shrink-0 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow'
                 >
                   <div className='p-6'>
                     <div className='flex justify-between items-start mb-4'>
