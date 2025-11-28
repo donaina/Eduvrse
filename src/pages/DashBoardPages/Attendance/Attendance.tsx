@@ -70,13 +70,13 @@ const Attendance = () => {
                     <div className='w-full '>
                       <div className=" ">
                         <div className="flex  justify-between items-center py-1 px-3">
-                          <div className='text-sm'>
-                            <h2 className="text-xl font-semibold">{item.event}</h2>
-                            <p className="text-sm text-gray-600">{item.date}</p>
+                          <div className='text-xs md:text-sm'>
+                            <h2 className=" font-semibold">{item.event}</h2>
+                            <p className=" text-gray-600 py-2 md:py-0">{item.date}</p>
                             <p>Room: {item.room}</p>
                           </div>
                           <div className="text-sm text-gray-600  right-1">
-                            <p className='my-2 bg-blue-600 w-24 rounded-md text-white text-center'>{item.duration ? ` ${item.duration}` : null}</p>
+                            <p className='my-2 bg-blue-600 text-xs md:text-sm w-24 rounded-md text-white text-center'>{item.duration ? ` ${item.duration}` : null}</p>
                             {/* <p className="text-sm text-gray-600">{item.date}</p> */}
 
                             <p className='text-end'>{item.time}</p>
@@ -113,9 +113,9 @@ const Attendance = () => {
                     <div className='w-full '>
                       <div className=" ">
                         <div className="flex  justify-between items-center py-1 px-3">
-                          <div className='text-sm'>
+                          <div className='text-xs md:text-sm'>
                             <h2 className="text-xl font-semibold">{item.event}</h2>
-                            <p className="text-sm text-gray-600">{item.date}</p>
+                            <p className="text-sm text-gray-600 py-2 md:py-0">{item.date}</p>
                             <p>Room: {item.room}</p>
                           </div>
                           <div className="text-sm text-gray-600">

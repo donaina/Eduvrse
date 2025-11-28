@@ -8,13 +8,13 @@ import Notification from '../../components/Notification.tsx';
 import eduverseLabsLogo from '../../Assets/images/eduverseLogo2.png';
 
 const sideMenuData = [
-  { name: 'Feed', path: '/feed' },
-  { name: 'My Course', path: '/course' },
-  { name: 'Assessments', path: '/assessment' },
-  { name: 'Attendance', path: '/attendance' },
-  { name: 'Messages', path: '/messages' },
-  { name: 'Settings', path: '/settings' },
-  { name: 'Profile', path: '/tools' },
+  { name: 'Feed', path: 'intructor/feed' },
+  { name: 'My Course', path: 'intructor/course' },
+  { name: 'Assessments', path: 'intructor/assessment' },
+  { name: 'Attendance', path: 'intructor/attendance' },
+  { name: 'Messages', path: 'intructor/messages' },
+  { name: 'Settings', path: 'intructor/settings' },
+  { name: 'Profile', path: 'intructor/tools' },
 ];
 
 const Dashboard = () => {

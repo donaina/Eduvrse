@@ -8,26 +8,31 @@ import gardians from '../../Assets/images/family.jpeg'
 import instructor from '../../Assets/images/instructor.jpeg'
 // @ts-ignore
 import admin from '../../Assets/images/admin.jpeg'
+// @ts-ignore
+import Logo from '../../Assets/images/eduverseLogo2.png'
 
 const Login = () => {
   return (
     <>
       <div className="w-full h-screen flex flex-col ">
-        <div className="h-1/2 bg-blue-500">
-          <h1 className="text-white font-bold pl-14 lg:pl-20 py-6 text-2xl">EduVerse Labs</h1>
-          <div className=" text-white pl-4 pr-4 mt-5 lg:mt-24 flex flex-col items-center lg:flex-row lg:justify-between lg:items-start lg:pl-20 ">
-            <div className="w-10/12 lg:w-1/2 my-4">
+        <div className="h-1/2 bg-[#dee2f0]">
+          <div className=" text-black pl-4 pr-4 mt-5 lg:mt-24 flex flex-col items-center lg:flex-row lg:justify-between lg:items-start lg:pl-20 ">
+            <div className="w-full px-4 lg:w-1/2 my-4">
+              <div className="w-64 -ml-6 md:-ml-10 md:w-96">
+                <img src={Logo} alt="Logo" />
+              </div>
+
               <p className="text-2xl font-semibold lg:mt-16 pb-0">Sign in to</p>
-              <p className="text-xl">Lorem ipsum is simply</p>
-              <div className="lg:w-2/3 pt-6">
-                <p className="text-xs ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae deserunt, cum repellendus odit libero ex nobis maxime quis maiores est consequatur sed voluptatem soluta delectus debitis assumenda quam aliquid architecto.</p>
+              {/* <p className="text-xl">Lorem ipsum is simply</p> */}
+              <div className="lg:w-2/3 pt-6 md:pt-2">
+                <p className="text-sm ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae deserunt, cum repellendus odit libero ex nobis maxime quis maiores est consequatur sed voluptatem soluta delectus debitis assumenda quam aliquid architecto.</p>
               </div>
               <div className="mt-4 text-2xl lg:hidden">
                 <h1>Welcome Back</h1>
               </div>
             </div>
-            <div className=" w-[max-content] lg:w-1/2 h-3/4  rounded-lg justify-center flex lg:relative">
-              <div className="bg-white text-black w-4/5 rounded-2xl shadow-lg py-5 lg:py-7 justify-center px-4 md:px-7 lg:px-12 absolute">
+            <div className=" w-full lg:w-1/2 h-3/4  rounded-lg justify-center flex lg:relative">
+              <div className="bg-white text-black w-11/12 rounded-2xl shadow-lg py-5 lg:py-7 justify-center px-4 md:px-7 lg:px-12 absolute">
                 <div className="justify-between hidden lg:flex">
                   <h1 className="text-xl">Welcome Back</h1>
                   <div className="text-sm">
