@@ -34,6 +34,7 @@ import InstructorAssessmentQuestions from './components/Assessment/AssessmentQue
 import InstructorAttendance from './components/Attendance/Attendance.tsx';
 import InstructorMessage from './components/Message/Message.tsx';
 import InstructorSettings from './components/Settings/Settings.tsx';
+import Profile from './components/Profile/Profile.jsx';
 
 
 
@@ -96,8 +97,7 @@ function App() {
               <Route path="/instructor/messages" element={<InstructorMessage />} />
               {/* <Route path="course" element={<Course />} /> */}
               <Route path="/instructor/settings" element={<InstructorSettings />} />
-              {/* <Route path="tools" element={<Tools />} /> */}
-              <Route path="*" element={<Feed />} /> {/* Default route */}
+              <Route path="/instructor/profile" element={<Profile />} />
               
               <Route path="*" element={<Feed />} /> {/* Default route */}
 

@@ -141,8 +141,8 @@ const Assessment = () => {
         {/* Available Assessments */}
         <h2 className='text-sm font-semibold my-4'>Available Assessments</h2>
 
-        
-        <div className='w-screen overflow-x-auto'>
+
+        <div className='w-full overflow-x-auto'>
           <div className='flex justify-center gap-6 px-4 pb-4 min-w-max'>
             {filteredAssessments.length === 0 ? (
               <div className='text-center py-12 w-full'>
@@ -164,7 +164,7 @@ const Assessment = () => {
                       <h3 className='text-lg font-semibold text-gray-800 leading-tight'>
                         {assessment.title}
                       </h3>
-                     
+
                     </div>
 
                     <div className='mb-4 flex justify-between'>
@@ -201,11 +201,10 @@ const Assessment = () => {
                   <div className='mt-4 px-6 w-full h-28 grid place-items-center bg-[#DED0FF]'>
                     <Link to='/assessmentQuestion' className='w-full'>
                       <button
-                        className={`w-full py-2 rounded text-white transition-colors ${
-                          assessment.status === 'Ready to Submit'
+                        className={`w-full py-2 rounded text-white transition-colors ${assessment.status === 'Ready to Submit'
                             ? 'bg-green-600 hover:bg-green-700'
                             : 'bg-blue-600 hover:bg-blue-700'
-                        }`}
+                          }`}
                       >
                         {assessment.status === 'Ready to Submit'
                           ? 'Submit'
@@ -222,8 +221,8 @@ const Assessment = () => {
         {/* Upcoming assignment */}
         <h2 className='text-sm font-semibold my-4'>Upcoming Assessments </h2>
 
-        
-        <div className='w-screen overflow-x-auto'>
+
+        <div className='w-full overflow-x-auto'>
           <div className='flex gap-6 px-4 pb-4 min-w-max p-3'>
             {filteredAssessments.length === 0 ? (
               <div className='text-center py-12 w-full'>
@@ -245,7 +244,7 @@ const Assessment = () => {
                       <h3 className='text-lg font-semibold text-gray-800 leading-tight'>
                         {assessment.title}
                       </h3>
-                     
+
                     </div>
 
                     <div className='mb-4 flex justify-between'>
@@ -282,11 +281,10 @@ const Assessment = () => {
                   <div className='mt-4 px-6 w-full h-28 grid place-items-center bg-[#DED0FF]'>
                     <Link to='/assessmentQuestion' className='w-full'>
                       <button
-                        className={`w-full py-2 rounded text-white transition-colors ${
-                          assessment.status === 'Ready to Submit'
+                        className={`w-full py-2 rounded text-white transition-colors ${assessment.status === 'Ready to Submit'
                             ? 'bg-green-600 hover:bg-green-700'
                             : 'bg-blue-600 hover:bg-blue-700'
-                        }`}
+                          }`}
                       >
                         {assessment.status === 'Ready to Submit'
                           ? 'Submit'

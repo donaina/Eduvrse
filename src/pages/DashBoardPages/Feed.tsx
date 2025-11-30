@@ -193,9 +193,10 @@ const Feed = () => {
                 </h5>
               </div>
 
-              <div className="lg:border border-gray-200 mt-2 lg:h-[500px] bg-white py-2 px-1 rounded-lg lg:shadow-lg">
-                <div className="flex gap-2 p-1 w-full overflow-x-auto whitespace-nowrap">
-                  {activitiesAndBadges.map((activity) => (
+              <div className=" mt-2 lg:h-[520px]  py-2 px-1 ">
+                <div className=" w-full border shadow-md rounded-md whitespace-nowrap">
+                  <div className='flex gap-2 p-4 overflow-x-auto '>
+                    {activitiesAndBadges.map((activity) => (
                     <div
                       key={activity.id}
                       className="h-44 w-40 rounded-lg flex flex-col shadow shadow-gray-400 overflow-hidden flex-shrink-0"
@@ -215,6 +216,7 @@ const Feed = () => {
                       </div>
                     </div>
                   ))}
+                  </div>
                 </div>
 
                 {/* Ask EduAI Section */}

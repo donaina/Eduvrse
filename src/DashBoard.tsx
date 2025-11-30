@@ -15,7 +15,7 @@ const sideMenuData = [
   { name: 'Certification', path: '/certification' },
   { name: 'Messages', path: '/messages' },
   { name: 'Settings', path: '/settings' },
-  { name: 'Tools', path: '/tools' },
+  { name: 'Profile', path: '/tools' },
 ];
 
 const DashBoard = () => {

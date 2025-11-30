@@ -98,7 +98,7 @@ export const Feed = () => {
           <div className="w-full lg:w-[48%]">
             <div className="flex items-center justify-between h-48 mb-2 bg-gray-200/35 gap-2 rounded-lg">
               <div className='p-2'>
-                <h2 className="text-black text-lg lg:text-2xl font-bold">Welcome back,</h2>
+                <h2 className="text-black text-lg lg:text-2xl font-bold">Welcome backkkkk,</h2>
                 <h1 className="text-blue-600 text-xl lg:text-3xl font-bold">Mr. Solomon!</h1>
                 <p className='text-xs'>Here is what is happening with your studies today.</p>
               </div>

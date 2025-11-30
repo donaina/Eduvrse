@@ -143,7 +143,7 @@ const Attendance = () => {
 
                 </div>
                 <div className='h-[76px] w-full  border border-pink-200 rounded-md p-4'>
-                    <div className='grid grid-cols-1 lg:grid-cols-3'>
+                    <div className='grid grid-cols-1 md:grid-cols-3'>
                         {
                             Tabs.map((tab) => (
                                 <button

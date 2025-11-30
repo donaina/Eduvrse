@@ -14,7 +14,7 @@ const sideMenuData = [
   { name: 'Attendance', path: '/instructor/attendance' },
   { name: 'Messages', path: '/instructor/messages' },
   { name: 'Settings', path: '/instructor/settings' },
-  { name: 'Profile', path: '/instructor/tools' },
+  { name: 'Profile', path: '/instructor/profile' },
 ];
 
 const Dashboard = () => {

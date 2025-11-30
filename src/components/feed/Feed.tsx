@@ -95,7 +95,7 @@ export const Feed = () => {
       <div className="mx-4 my-2 ">
         <div className="  ">
           {/* LEFT SECTION */}
-          <div className="w-full grid md:grid-cols-2 bg-red-500 gap-2 mb-2">
+          <div className="w-full grid md:grid-cols-2 gap-2 mb-2">
             <div className="flex items-center justify-between p-4 h-48 mb-2 bg-gray-200/35 gap-2 rounded-lg">
               <div className='p-2'>
                 <h2 className="text-black text-lg lg:text-2xl font-bold">Welcome back,</h2>
@@ -108,11 +108,11 @@ export const Feed = () => {
 
 
             {/* Feed Events */}
-            <div className="grid md:grid-cols-2 px-4 h-48 gap-2 mb-2 w-full rounded-lg">
+            <div className=" grid grid-cols-2  h-48 gap-2 mb-2 w-full rounded-lg">
               {feedEvents.map((event) => (
                 <div
                   key={event.id}
-                  className="bg-[#F7F6F6] p-2 mt-1 rounded-lg border border-gray-300  flex items-center justify-between"
+                  className="bg-[#F7F6F6] py-2 px-4 mt-1 rounded-lg border border-gray-300 shadow-md flex items-center justify-between"
                 >
                   <div>
                     <h2 className="text-xs font-bold">{event.title}</h2>
@@ -132,74 +132,80 @@ export const Feed = () => {
           </div>
 
           {/* RIGHT SECTION */}
-          <div className="w-full grid md:grid-cols-2">
+          <div className="w-full grid lg:grid-cols-2 gap-2">
 
-            <div className="lg:border  border-gray-200 mt-1 lg:h-[500px] bg-white py-2 px-1 rounded-lg overflow-y-auto">
-              <div className="flex justify-between items-center mb-2">
-                <div>
-                  <h1 className="font-semibold text-xl lg:text-xl">Recent Updates</h1>
-                  <h5 className="text-[8px] lg:text-[10px] mt-1 ">Latest Activities & Notifications</h5>
+            <div>
+              <div>
+                    <h1 className="font-semibold text-xl lg:text-xl">Recent Updates</h1>
+                    <h5 className="text-[8px] lg:text-[10px] mt-1 ">Latest Activities & Notifications</h5>
+                  </div>
+              <div className="lg:border  border-gray-200 mt-1 lg:h-[525px] bg-white py-2 px-1 rounded-lg overflow-y-auto">
+                <div className="flex justify-between items-center mb-2">
+                  
+                  <button className="p-2 bg-black text-white text-[10px] rounded-md lg:hidden">
+                    Ask Eduai
+                  </button>
                 </div>
-                <button className="p-2 bg-black text-white text-[10px] rounded-md lg:hidden">
-                  Ask Eduai
-                </button>
-              </div>
-              {recentUpdates.map((update) => (
+                {recentUpdates.map((update) => (
 
-                <div
-                  key={update.id}
-                  className="w-full h-24 bg-[#F7F6F6] border border-gray-300 rounded flex mb-2"
-                >
+                  <div
+                    key={update.id}
+                    className="w-full h-32 bg-[#F7F6F6] border border-gray-300 rounded flex mb-2"
+                  >
 
-                  <div className={`w-[6px] h-full rounded-l-xl ${update.color}`} />
-                  <div className="flex justify-between items-center w-full py-1 px-2">
-                    <div>
-                      <h3 className="text-sm font-semibold">{update.title}</h3>
-                      <p className="text-[8px]">{update.time}</p>
-                      <p className="text-[10px] py-1 line-clamp-1">{update.description}</p>
-                      <button className="p-1 w-24 my-2 bg-black rounded-md text-white capitalize font-medium text-[10px] hidden lg:block">
-                        {update.buttonText}
+                    <div className={`w-[6px] h-full rounded-l-xl ${update.color}`} />
+                    <div className="flex justify-between items-center w-full py-1 px-2">
+                      <div>
+                        <h3 className="text-sm font-semibold">{update.title}</h3>
+                        <p className="text-[8px]">{update.time}</p>
+                        <p className="text-[10px] h-10 py-1 line-clamp-1">{update.description}</p>
+                        <button className="p-1 w-24 my-2 bg-black rounded-md text-white capitalize font-medium text-[10px] hidden lg:block">
+                          {update.buttonText}
+                        </button>
+                      </div>
+                      <button className="bg-[#f4d6eb] text-black w-24 p-2 text-[10px] font-medium rounded-md">
+                        {update.categories}
                       </button>
                     </div>
-                    <button className="bg-[#f4d6eb] text-black w-24 p-2 text-[10px] font-medium rounded-md">
-                      {update.categories}
-                    </button>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             {/* Activities & Badges */}
 
             <div>
-              <h1 className="font-semibold text-xl">Quick actions</h1>
-              <h5 className="text-[8px] lg:text-[10px] mt-1 ">
-                Common Task & Shortcuts
-              </h5>
-
-              <div className="lg:border border-gray-200 mt-2 lg:h-[500px] bg-white py-2 px-1 rounded-lg ">
-                <div className="flex gap-2 p-1 w-full overflow-x-auto whitespace-nowrap">
-                  {activitiesAndBadges.map((activity) => (
+              <div className='px-1'>
+                <h1 className="font-semibold text-xl">Quick actions</h1>
+                <h5 className="text-[8px] lg:text-[10px] mt-1  ">
+                  Common Task & Shortcuts
+                </h5>
+              </div>
+              <div className=" border-gray-20  lg:h-[500px] bg-white p-1 rounded-lg ">
+                <div className=" border rounded-md shadow p-4">
+                  <div className="flex gap-2 overflow-x-auto w-auto py-2">
+                    {activitiesAndBadges.map((activity) => (
                     <div
                       key={activity.id}
                       className="h-44 w-40 rounded-lg flex flex-col shadow shadow-gray-400 overflow-hidden flex-shrink-0"
                     >
-                      <div className="flex items-center justify-center bg-white h-24 w-full ">
+                      <div className="flex items-center justify-center bg-white h-20 w-full p-1 ">
                         <img
                           src={activity.badge}
                           alt={activity.title}
-                          className="max-h-16 max-w-full object-contain opacity-65"
+                          className=" max-h-20 max-w-full object-contain p-2"
                         />
                       </div>
-                      <div className={`flex flex-col justify-between flex-1 ${activity.color} text-black`}>
+                      <div className={`flex flex-col justify-between p-1 flex-1 ${activity.color} text-black`}>
                         <p className='p-1 text-[10px] font-semibold line-clamp-2 text-wrap'>{activity.title}</p>
-                        <p className="p-1 text-[8px] w-[96%] h-10  line-clamp-2 text-wrap">{activity.description}</p>
+                        <p className="p-1 text-[8px] w-[96%] h-9  line-clamp-2 text-wrap">{activity.description}</p>
                         <button className="bg-black text-white text-[10px] w-16 py-1 m-1 rounded-md">
                           View
                         </button>
                       </div>
                     </div>
                   ))}
+                  </div>
                 </div>
 
                 {/* Ask EduAI Section */}
@@ -208,7 +214,7 @@ export const Feed = () => {
                     <h1 className="font-semibold text-xl">Ask Eduai</h1>
                     <h3 className="text-[10px]">Common Tasks & Shortcuts</h3>
                   </div>
-                  <div className="border border-gray-300 my-1 h-56 rounded-md p-2 w-full">
+                  <div className="border border-gray-300 my-1 h-[14.5rem] rounded-md p-4 w-full">
                     <div
                       style={{ backgroundImage: `url(${AskEduAi})` }}
                       className="relative bg-no-repeat bg-center w-full h-40 rounded-lg shadow-md"
